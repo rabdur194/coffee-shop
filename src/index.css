@@ -1,0 +1,41 @@
+@import "tailwindcss";
+
+/* ========== Custom Theme ========== */
+@theme {
+  /* Coffee color palette */
+  --color-coffee-50: #faf6f1;
+  --color-coffee-100: #f0e6d8;
+  --color-coffee-200: #e0cbb0;
+  --color-coffee-300: #c9a87c;
+  --color-coffee-400: #b0895b;
+  --color-coffee-500: #8b5e3c;
+  --color-coffee-600: #6f4a30;
+  --color-coffee-700: #5a3c28;
+  --color-coffee-800: #4a3222;
+  --color-coffee-900: #3d2a1d;
+  --color-coffee-950: #241911;
+
+  /* Fonts */
+  --font-display: "Playfair Display", serif;
+  --font-body: "Inter", system-ui, sans-serif;
+}
+
+/* ========== Base Styles ========== */
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--color-coffee-950);
+  color: var(--color-coffee-100);
+  margin: 0;
+}
+
+/* Gradient text utility */
+.text-gradient {
+  background: linear-gradient(135deg, #e0cbb0 0%, #c9a87c 50%, #b0895b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
