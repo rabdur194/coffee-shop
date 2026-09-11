@@ -57,7 +57,15 @@ const mockMenu: Coffee[] = [
 export const getMenu = async (): Promise<Coffee[]> => {
   try {
     const response = await api.get("/menu");
-    return response.data;
+
+    // Only return the data if it is a real array
+    if (Array.isArray(response.data)) {
+      return response.data;
+    }
+
+    // If the API returned something else, fall back to mock
+    console.warn("API returned invalid data, using mock data");
+    return mockMenu;
   } catch (error) {
     console.warn("API is not available, using mock data");
     return mockMenu;
