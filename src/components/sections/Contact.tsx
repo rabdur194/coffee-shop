@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Mail, Phone, MapPin, Send } from "lucide-react";
+import api from "../../lib/axios";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -20,19 +21,36 @@ export default function Contact() {
     }));
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  //--Before Backend---
+  // const handleSubmit = (e: React.FormEvent) => {
+  //   e.preventDefault();
+
+  //   // For now just show success message
+  //   // Later you will send this data to your Node.js backend
+  //   console.log("Form submitted:", formData);
+  //   setIsSubmitted(true);
+
+  //   // Reset form
+  //   setFormData({ name: "", email: "", message: "" });
+
+  //   // Hide success message after 3 seconds
+  //   setTimeout(() => setIsSubmitted(false), 3000);
+  // };
+
+  //--After-Backend---
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // For now just show success message
-    // Later you will send this data to your Node.js backend
-    console.log("Form submitted:", formData);
-    setIsSubmitted(true);
-
-    // Reset form
-    setFormData({ name: "", email: "", message: "" });
-
-    // Hide success message after 3 seconds
-    setTimeout(() => setIsSubmitted(false), 3000);
+    try {
+      await api.post("/contact", formData);
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+      setTimeout(() => setIsSubmitted(false), 3000);
+    } catch (error: any) {
+      console.error("CONTACT ERROR:", error);
+      console.error("RESPONSE:", error.response?.data);
+      alert("Failed to send message. Please try again.");
+    }
   };
 
   return (
