@@ -1,4 +1,3 @@
-import { Flame, Leaf, Clock, Trophy } from "lucide-react";
 const features = [
   {
     id: 1,
