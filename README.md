@@ -1,6 +1,10 @@
+
+This is a fully functional Typescript Coffe ordering app. BUilding to full stack. Right now the front Home landing page is done.USed Typescript, Tailwind, React for Frontend.
+OFr Backend: Node.js, Express.js, RestAPI, Axios, PostgreSQL
+
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This readme provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
 
 Currently, two official plugins are available:
 
