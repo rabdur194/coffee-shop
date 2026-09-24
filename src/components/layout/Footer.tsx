@@ -1,11 +1,5 @@
 import { Coffee } from "lucide-react";
-import {
-  FaInstagram,
-  FaFacebook,
-  FaSnapchat,
-  FaTwitter,
-  FaYoutube,
-} from "react-icons/fa";
+import { FaInstagram, FaFacebook, FaSnapchat } from "react-icons/fa";
 
 const footerLinks = [
   { name: "Home", href: "#home" },
