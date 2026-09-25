@@ -1,36 +1,93 @@
+# Coffee Aroma — Full Stack Landing Page
 
-This is a fully functional Typescript Coffe ordering app. BUilding to full stack. Right now the front Home landing page is done.USed Typescript, Tailwind, React for Frontend.
-OFr Backend: Node.js, Express.js, RestAPI, Axios, PostgreSQL
+A modern full-stack coffee shop landing page built with React, Express, PostgreSQL, and Supabase.
 
-# React + TypeScript + Vite
+The Home page is fully connected from frontend to backend to database and deployed online.
 
-This readme provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+---
 
-Currently, two official plugins are available:
+## Live Demo
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- **Frontend:** https://coffee-shop-two-sandy.vercel.app/
+- **Backend API:** https://coffee-shop-api-3jb9.onrender.com
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Features
 
-## Expanding the Oxlint configuration
+### Frontend
+- Responsive coffee shop landing page
+- Header with mobile navigation
+- Hero section
+- Features section
+- Menu section (dynamic from database)
+- Testimonials section (dynamic from database)
+- Contact form (saves messages to database)
+- Footer
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+### Backend
+- REST API with Express
+- PostgreSQL database hosted on Supabase
+- Classic SQL queries using `pg`
+- Endpoints for:
+  - Menu
+  - Features
+  - Testimonials
+  - Contact messages
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+### Deployment
+- Frontend deployed on **Vercel**
+- Backend deployed on **Render**
+- Database hosted on **Supabase**
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+---
+
+## Tech Stack
+
+### Frontend
+- React + TypeScript
+- Vite
+- Tailwind CSS
+- TanStack Query
+- Axios
+- Lucide React / React Icons
+
+### Backend
+- Node.js
+- Express
+- PostgreSQL
+- `pg` (node-postgres)
+- CORS
+- dotenv
+
+### Database
+- Supabase (PostgreSQL)
+
+### Hosting
+- Vercel (frontend)
+- Render (backend)
+- Supabase (database)
+
+---
+
+## Project Structure
+
+```text
+React Project/
+├── coffee-shop/              # Frontend (React + Vite)
+│   ├── src/
+│   │   ├── api/
+│   │   ├── components/
+│   │   ├── hooks/
+│   │   ├── lib/
+│   │   ├── types/
+│   │   └── App.tsx
+│   └── ...
+│
+└── coffee-shop-api/          # Backend (Express + PostgreSQL)
+    ├── src/
+    │   ├── controllers/
+    │   ├── routes/
+    │   ├── lib/
+    │   └── index.ts
+    └── ...
